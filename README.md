@@ -16,5 +16,9 @@ The first step is to download the myrobot packages from the Github repository.Th
 - myrobot_slam: for create a map
 - myrobot_navigaion: for autonomous movement
 
+Since these packages are installed from source, they need to be installed in the catkin folder. They can be built with the following command:
 
 cd ~/catkin_ws/src
+git clone https://github.com/husky/husky_desktop.git
+cd ~/catkin_ws/
+catkin_make
