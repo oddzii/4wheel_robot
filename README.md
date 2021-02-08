@@ -24,3 +24,11 @@ Since these packages are installed from source, they need to be installed in the
   cd ~/catkin_ws/
   catkin_make
 ```
+the following packages are the ones that are required for use with myrobot platform.
+```
+sudo apt-get install ros-melodic-teleop-twist-joy 
+sudo apt-get install ros-melodic-robot-localization
+sudo apt-get install ros-melodic-joint-state-controller
+sudo apt-get install ros-melodic-dwa-local-planner
+sudo apt-get install ros-melodic-rviz-imu-plugin
+```
