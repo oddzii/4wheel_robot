@@ -5,3 +5,20 @@ A mobile robot platfrom with 4 wheels layout.
 
 # For watch presentation Click below !!
 [![Watch the video](https://user-images.githubusercontent.com/68624655/107232258-cb441a80-6a53-11eb-9397-5b1126d1c503.png)](https://www.canva.com/design/DAES-s6edVg/wbL7giU7Nh73_EDcSIsxaQ/view)
+
+
+# Install Required Dependencies
+
+The first step is to download the myrobot packages from the Github repository.This includes the following ROS packages used for simulation as well as operation of myrobot.
+
+- myrobot_description: Robot description (URDF)
+- myrobot_gazebo : for simulation
+- myrobot_slam: for create a map
+- myrobot_navigaion: for autonomous movement
+
+Since these packages are installed from source, they need to be installed in the catkin folder. They can be built with the following command:
+
+cd ~/catkin_ws/src
+git clone 
+cd ~/catkin_ws/
+catkin_make
