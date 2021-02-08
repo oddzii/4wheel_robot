@@ -1,0 +1,70 @@
+<?xml version='1.0'?>
+<robot name="my_robot" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <!-- lower Right Wheel -->
+  <link name="lower_right_wheel">
+    <visual>
+      <origin xyz="-0.3 0 0" rpy="1.570795 0 0" />
+      <geometry>
+          <cylinder length="0.1" radius="0.2" />
+      </geometry>
+    </visual>
+    <!-- lower Right Wheel collision, mass and inertia -->
+    <collision>
+      <origin xyz="-0.3 0 0" rpy="1.570795 0 0" />
+      <geometry>
+          <cylinder length="0.1" radius="0.2" />
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.005" iyz="0.0" izz="0.005"/>
+    </inertial>
+  </link>
+  <gazebo reference="lower_right_wheel">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <!--lower Right Wheel joint -->
+  <joint name="joint_lower_right_wheel" type="continuous">
+    <parent link="base_link"/>
+    <child link="lower_right_wheel"/>
+    <origin xyz="-0.3 -0.3 -0.3" rpy="0 0 0" /> 
+    <axis xyz="0 1 0" />
+  </joint>
+
+
+ <!-- lower Left Wheel -->
+  <link name="lower_left_wheel">
+    <visual>
+      <origin xyz="-0.3 0 0" rpy="1.570795 0 0" />
+      <geometry>
+          <cylinder length="0.1" radius="0.2" />
+      </geometry>
+    </visual>
+    <!-- lower Left Wheel collision, mass and inertia -->
+    <collision>
+      <origin xyz="-0.3 0 0" rpy="1.570795 0 0" />
+      <geometry>
+          <cylinder length="0.1" radius="0.2" />
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.005" iyz="0.0" izz="0.005"/>
+    </inertial>
+  </link>
+  <gazebo reference="lower_left_wheel">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <!-- lower Left Wheel joint -->
+  <joint name="joint_lower_left_wheel" type="continuous">
+    <parent link="base_link"/>
+    <child link="lower_left_wheel"/>
+    <origin xyz="-0.3 0.30 -0.3" rpy="0 0 0" /> 
+    <axis xyz="0 1 0"/>
+  </joint>
+
+</robot>
+
+
+

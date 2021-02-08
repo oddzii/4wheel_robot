@@ -1,0 +1,94 @@
+<?xml version='1.0'?>
+<robot name="my_robot" xmlns:xacro="http://ros.org/wiki/xacro">
+  <!-- hokuyo model -->
+
+  <joint name="hokuyo_joint" type="fixed">
+    <axis xyz="0 1 0" />
+    <origin xyz="0.25 0 0" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="sensor_laser"/>
+  </joint>
+
+  <link name="sensor_laser">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+    <box size="0.1 0.1 0.1"/>
+      </geometry>
+    </collision>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://myrobot_description/meshes/sensors/hokuyo.dae"/>
+      </geometry>
+    </visual>
+
+    <inertial>
+      <mass value="1e-9" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-9" ixy="0" ixz="0" iyy="1e-9" iyz="0" izz="1e-9" />
+    </inertial>
+  </link>
+
+  <!-- Camera model -->
+  <joint name="camera_joint" type="fixed">
+    <axis xyz="0 1 0" />
+    <origin xyz="0.235 0 0.15" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="camera_link"/>
+  </joint>
+  <link name="camera_link">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+    <box size="0.05 0.05 0.05"/>
+      </geometry>
+    </collision>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.05 0.05 0.05"/>
+      </geometry>
+
+      <material name="red"/>
+    </visual>
+
+    <inertial>
+      <mass value="1e-9" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-9" ixy="0" ixz="0" iyy="1e-9" iyz="0" izz="1e-9" />
+    </inertial>
+  </link>
+
+  <!-- IMU Link is the standard mounting position for the UM6 IMU.-->
+  <!-- Can be modified with environment variables in /etc/ros/setup.bash -->
+ <link name="imu_link">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+    <box size="0.1 0.1 0.01"/>
+      </geometry>
+    </collision>
+      <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.1 0.1 0.01"/>
+      </geometry>  
+      <material name="red"/> 
+      </visual>
+    <inertial>
+      <mass value="1e-5" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+    </inertial>
+  </link>
+  <joint name="imu_joint" type="fixed">
+    <origin xyz="0 0 -0.5" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="imu_link" />
+  </joint>
+    
+
+</robot>

@@ -1,0 +1,37 @@
+<?xml version='1.0'?>
+<robot name="my_robot" xmlns:xacro="http://ros.org/wiki/xacro">
+  <!-- Base Link -->
+  <link name="base_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.5 0.5 1"/>
+      </geometry>
+      <material name="Blue">
+         <color rgba="0 0.5 1 1"/>
+      </material>
+    </visual>
+    <!-- Base collision, mass and inertia -->
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+          <box size="0.5 0.5 1"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="5"/>
+      <inertia ixx="0.7" ixy="0.0" ixz="0.0" iyy="0.7" iyz="0.0" izz="0.25"/>
+    </inertial>
+
+
+  </link>
+
+
+  <gazebo reference="base_link">
+    <material>Gazebo/Blue</material>
+    <pose>0 0 0.1 0 0 0</pose>
+  </gazebo>
+
+
+
+</robot>
