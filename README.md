@@ -20,6 +20,8 @@ Since these packages are installed from source, they need to be installed in the
 
 ```
   cd ~/catkin_ws/src
+  git clone https://github.com/ros-perception/slam_gmapping.git
+  git clone https://github.com/ros-planning/navigation.git
   git clone https://github.com/oddzii/4wheel_robot.git
   cd ~/catkin_ws/
   catkin_make
