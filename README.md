@@ -1,3 +1,4 @@
 # 4wheel_robot
 
 A mobile robot platfrom with 4 wheels layout.
+![Screenshot from 2021-01-12 08-20-25](https://user-images.githubusercontent.com/68624655/107174453-da4bae00-69fc-11eb-93ca-6029ceffd057.png)
